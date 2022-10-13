@@ -1,0 +1,147 @@
+:root{
+    /* Primary colors */
+    --red: hsl(0, 78%,62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* Neutral colors */
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue : hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--veryLightGray);
+}
+
+.container{
+    width: 80%;
+    height: 90%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+.header1{
+    font-weight: 200;
+    color: var(--veryDarkBlue);
+}
+.header2{
+    font-weight: 600;
+    color: var(--veryDarkBlue);
+}
+.intro p{
+    color: var(--grayishBlue);
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+@media (max-width:600px){
+    /* .container{
+        width: 90%;
+    } */
+
+    .intro{
+        width: 100%;    
+    }
+
+    .header1, .header2{
+        font-size: 24px;
+    }
+    .cards{
+        flex-direction: column;
+    }
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+.left{
+    height: 50%;
+    flex: 1;
+}
+.center{
+    flex: 1;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr 1fr;
+    gap: 20px 0;
+}
+.right{
+    flex: 1;
+    height: 50%;
+}
+
+.card{
+    width: 100%;
+    padding: 30px 0;
+    background-color: white;
+    box-shadow: 0px 10px 10px 2px rgba(228, 226, 226, 0.664);
+    border-radius: 12px;
+    position: relative;
+}
+h3{
+    padding: 0 30px;
+    margin-bottom: 10px;
+    color: var(--veryDarkBlue);
+}
+section p{
+    padding: 0 30px;
+    color: var(--grayishBlue);
+    font-size: 15px;
+    line-height: 1.5rem;
+}
+img{
+    margin-top: 50px;
+    float: right;
+    padding: 0 30px 0 0;
+}
+
+.card::before{
+    content: "";
+    width: 100%;
+    height: 6px;
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.left::before{
+    background-color: var(--cyan) ;
+}
+.top::before{
+    background-color: var(--red) ;
+}
+.right::before{
+    background-color: var(--blue) ;
+}
+.bottom::before{
+    background-color: var(--orange) ;
+}
